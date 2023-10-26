@@ -1,12 +1,4 @@
-### database (dict) of student grades. have a varied set of classes and grades for each student. able to add or delete classes.
-### show midterm and final mark.
-### 1] Print all students                                                       done
-### 2] avg of each student. avg of each class. total avg                        done
-### 3] Search individual student. ask for ID Yes or no. if No ask name check if more that one studnet with the name.
-###        IF yes ask for birthday in year, month, date xxxx-xx-xx                                               
-### 4] able to add or delete students.                                  
-### 5] Print all students from a class with >= grade (is grade between 1-100)
-### 6] Quit program
+##This Python program serves as a comprehensive school database management system. It is designed to efficiently handle and manipulate student data. 
 
 from schoolsdatabase import schools_db
 
