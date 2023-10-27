@@ -94,7 +94,7 @@ def add_new_student(schools_db):
             break
         new_grade = int(input(f"Please enter the new student's grade for {new_class}: "))
         new_classes[new_class] = new_grade
-    schools_db[new_id] = {'Name': new_name, 'Birthday': new_birthday, 'Classes': new_classes}
+    schools_db[new_id] = {'Name': new_name, 'Birthday': new_student_birthday, 'Classes': new_classes}
     
 # Delete an existing student
 def delete_student(schools_db):
