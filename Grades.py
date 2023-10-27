@@ -2,6 +2,7 @@
 
 from schoolsdatabase import schools_db
 
+
 #Import the schools_db from a csv file or delete the above code and use the schools_db found below
 
 #schools_db = {'ID0001': {'Name': 'John Doe', 'Birthday': '2005-01-01', 'Classes': {'Math': 85, 'English': 90, 'Science': 95}},
@@ -71,11 +72,12 @@ def students_with_grade(schools_db):
 # Generate a unique ID for a new student.
 # ID0005, ID0012, ID0025 and ID0026 are not used in the orginal DB. New students will be given those first
 def generate_unique_id(schools_db):
-    highest_id = max(schools_db.keys())
-    highest_number = int(highest_id[2:])
-    new_number = highest_number + 1
-    new_id = 'ID' + str(new_number).zfill(4)
-    return new_id
+    new_number = 1
+    while True:
+        new_id = 'ID' + str(new_number).zfill(4)
+        if new_id not in schools_db:
+            return new_id
+        new_number += 1
 
 # Input a new student with classes and grades
 def add_new_student(schools_db):
@@ -141,6 +143,7 @@ def print_student_info(student_info):
         
 #Prints all students info in the database        
 def print_all_students(schools_db):
+    schools_db = dict(sorted(schools_db.items()))
     print('Print each student with their corresponding classes')
     for student_id, student_info in schools_db.items():
         print('-' * 70)
