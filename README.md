@@ -20,4 +20,10 @@ This Python program is an excellent tool for educational institutions, providing
 pip install pandas
 pip install openpyxl
 In the same directory place the CSV student info database file
-Run the program for the main menu prompt 
+Run the program for the main menu prompt
+
+### Project Status
+Core development completed.
+Bug fixes and GUI still in development.
+
+dvanovcan@gmail.com
