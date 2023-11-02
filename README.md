@@ -1,7 +1,7 @@
 # School_Student_Database
 ### About
 
-This Python program, with its core development phase completed, serves as a robust and comprehensive school database management system. It is meticulously designed to handle and manipulate student data with utmost efficiency. While the core functionality of the program has been completed, additional features such as a Graphical User Interface (GUI) are still under development. This will further enhance the user experience, making data management more intuitive and accessible. Stay tuned for these exciting updates!. The program’s key features include:
+This Python program, with its core development phase completed, serves as a robust and comprehensive school database management system. It is meticulously designed to handle and manipulate student data with utmost efficiency. Additional features such as a Graphical User Interface (GUI) are still under development. This will further enhance the user experience, making data management more intuitive and accessible. Stay tuned for these exciting updates!. The program’s key features include:
 
 Student Search: It allows for the retrieval of individual student information and calculation of their average grades.
 
