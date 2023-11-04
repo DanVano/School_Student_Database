@@ -55,6 +55,8 @@ def new_student(schools_db):
     new_classes = {}
     while True:
         new_class = simpledialog.askstring("Input", "Please enter a class for the new student (or 'done' to finish): ", parent = root)
+        if new_name is None:
+            return "Cancelled"
         if new_class.lower() == 'done':
             break
         new_grade = int(simpledialog.askstring("Input", f"Please enter the new student's grade for {new_class}: ", parent = root))
@@ -212,6 +214,7 @@ def student_average(student_db, student_id):
     average = round(sum(grades) / len(grades), 2)
     return average
 
+# Prints out the GPA of every student line by line.
 def multiple_student_averages(schools_db):
     result = 'The GPA of each student given below\n'
     for student_id, student_info in schools_db.items():
