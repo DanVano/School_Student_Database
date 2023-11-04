@@ -1,21 +1,15 @@
 ##This Python program serves as a comprehensive school database management system. It is designed to efficiently handle and manipulate student data. 
 import tkinter as tk
-import pandas as pd
 
 from tkinter import messagebox, simpledialog
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
-from functions import *
+from app_functions import *
+from utilities import *
 
-#Import the student information from a CSV file
-def gather_student_info():
-    with open('schools.csv', newline='') as csvfile:
-        reader = csv.DictReader(csvfile)
-        data = list(reader)
-    schools_db = {row['ID']: {'Name': row['Name'], 'Birthday': row['Birthday'], 'Classes': json.loads(row['Classes'])} for row in data}
-    return schools_db
 
+#Import the student info Database
 schools_db = gather_student_info()
 
 # The Main Menu choices for the User
@@ -88,3 +82,4 @@ result_text.pack()
 root.mainloop()
     
 save_excel(schools_db)
+exit()
