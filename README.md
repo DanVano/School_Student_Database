@@ -1,4 +1,4 @@
-# School_Student_Database
+# School_Student_Database Version 2
 ### About
 
 This Python program is a comprehensive school database management system. It allows the Admin to manage and analyze the student directory. Key features include student search, class averages calculation, student management, database overview, and grade filtering. It’s a valuable tool for educational institutions, simplifying administrative tasks and providing insights into student performance. The program accepts a CSV file of student information and saves the database into an Excel file.
@@ -13,6 +13,7 @@ In the same directory place the CSV student info database file (default: schools
 
 Run the main.py file for the Main Menu GUI prompt
 
+the file grades.py is Version 1
 ### Project Status
 
 Core development completed.
