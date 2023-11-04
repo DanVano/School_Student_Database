@@ -23,6 +23,6 @@ Bug fixes development.
 
 ### Known Bugs
 
-After the intial input pop-up box occurs the precending pop-ups dont load into focus. The following code is placed into each function --> root = tk.Tk(), root.withdraw(), root.destroy() and parent = root to bypass the issuse. A cleaner universial fix would be ideal.
- 
+After the intial input pop-up box occurs the precending pop-ups dont load into focus. The following code is placed into each function --> root = tk.Tk(), root.withdraw(), root.destroy() and parent = root to bypass the issuse. A cleaner universial fix would be ideal which would allow for better code readability
+
 dvanovcan@gmail.com
