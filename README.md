@@ -1,29 +1,25 @@
 # School_Student_Database
 ### About
 
-This Python program, with its core development phase completed, serves as a robust and comprehensive school database management system. It is meticulously designed to handle and manipulate student data with utmost efficiency. Additional features such as a Graphical User Interface (GUI) are still under development. This will further enhance the user experience, making data management more intuitive and accessible. Stay tuned for these exciting updates!. The program’s key features include:
-
-Student Search: It allows for the retrieval of individual student information and calculation of their average grades.
-
-Class Averages: The program can compute and display the average grades for specific classes.
-
-Student Management: It provides the functionality to add new students to the database, complete with their corresponding classes and grades. It also allows for the removal of existing students from the database.
-
-Database Overview: The program is capable of printing the entire database, showcasing each student’s information along with their corresponding classes.
-
-Grade Filtering: It can display all students from a specific class who have achieved a grade equal to or higher than a specified value.
-
-This Python program is an excellent tool for educational institutions, providing a streamlined approach to managing and analyzing student data. It simplifies administrative tasks while also providing valuable insights into student performance.
+This Python program is a comprehensive school database management system. It allows the Admin to manage and analyze the student directory. Key features include student search, class averages calculation, student management, database overview, and grade filtering. It’s a valuable tool for educational institutions, simplifying administrative tasks and providing insights into student performance. The program accepts a CSV file of student information and saves the database into an Excel file.
 
 ### How to use the program
 
-pip install pandas
-pip install openpyxl
-In the same directory place the CSV student info database file
-Run the program for the main menu prompt
+pip install pandas and pip install openpyxl
+
+Files main.py functions.py are required
+
+In the same directory place the CSV student info database file (default: schools). Edit the function gather_student_info() at the top of main.py file to change the filename
+
+Run the main.py file for the Main Menu GUI prompt
 
 ### Project Status
-Core development completed.
-Bug fixes and GUI still in development.
 
+Core development completed.
+Bug fixes development.
+
+### Known Bugs
+
+After the intial input pop-up box occurs the precending pop-ups dont load into focus. The following code is placed into each function --> root = tk.Tk(), root.withdraw(), root.destroy() and parent = root to bypass the issuse. A cleaner universial fix would be ideal.
+ 
 dvanovcan@gmail.com
