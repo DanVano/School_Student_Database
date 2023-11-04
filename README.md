@@ -9,7 +9,7 @@ This Python program is a comprehensive school database management system. It all
 
 pip install pandas and pip install openpyxl
 
-Files main.py, functions.py are required
+Files main.py, functions.py, and utilities.py are required. schools.csv can be found for a default database.
 
 In the same directory place the CSV student info database file (default: schools). Edit the function gather_student_info() at the top of main.py file to change the filename
 
