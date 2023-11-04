@@ -1,25 +1,27 @@
-##This Python program serves as a comprehensive school database management system. It is designed to efficiently handle and manipulate student data. 
-
-import csv
-import json
 import tkinter as tk
-import pandas as pd
 
 from tkinter import messagebox, simpledialog
-from openpyxl import load_workbook
-from openpyxl.utils import get_column_letter
 
-############################################################################
-# Functions that require user input
 
+# Generate a unique ID for a new student. ID0005, ID0012, ID0025 and ID0026 are not used in the orginal DB. New students will be given those first
+def generate_unique_id(schools_db):
+    new_number = 1
+    while True:
+        new_id = 'ID' + str(new_number).zfill(4)
+        if new_id not in schools_db:
+            return new_id
+        new_number += 1
+
+# Collects the classes within the database for the gui
 def available_classes(schools_db):
     #all_classes = {}
     all_classes= set()
     for student in schools_db.values():
         all_classes.update(student['Classes'].keys())
     classes_gui = ', '.join(sorted(all_classes))
-    return classes_gui
+    return classes_gui       
 
+# Prints out the total average of an inputted class
 def class_average(schools_db):
     root = tk.Tk()
     root.withdraw()
@@ -35,7 +37,7 @@ def class_average(schools_db):
     root.destroy()
     return result
       
-# Input a new student with corresponding classes and grades
+# Inputs a new student with corresponding classes and grades
 def new_student(schools_db):
     root = tk.Tk()
     root.withdraw()
@@ -61,7 +63,7 @@ def new_student(schools_db):
     root.destroy()
     return "New student added"
     
-# Delete an existing student
+# Deletes an existing student
 def delete_student(schools_db):
     student_id = simpledialog.askstring("Input", "Please enter the ID of the student to delete: ")
     if student_id is None:
@@ -73,7 +75,6 @@ def delete_student(schools_db):
         del schools_db[student_id]
         return f"Student {student_id} has been deleted.\n{student_name}"
     return "No student found with this ID."
-        # Add a class and grade to a pre-existing student
 
 # Add a new class and grade to a selected student
 def add_class_and_grade(schools_db):
@@ -220,39 +221,3 @@ def multiple_student_averages(schools_db):
         result += f"{student_info['Name']} (ID: {student_id[2:]}) GPA: {average:.2f}%\n"
     return result
 
-# Generate a unique ID for a new student.
-# ID0005, ID0012, ID0025 and ID0026 are not used in the orginal DB. New students will be given those first
-def generate_unique_id(schools_db):
-    new_number = 1
-    while True:
-        new_id = 'ID' + str(new_number).zfill(4)
-        if new_id not in schools_db:
-            return new_id
-        new_number += 1
-        
-############################################################################
-# Save the modified schools_db to an excel file
-def save_excel(schools_db):
-    schools_db = dict(sorted(schools_db.items()))
-    flat_data = {}
-    # Save the excel file
-    for id, info in schools_db.items():
-        flat_data[id] = {**{'Name': info['Name'], 'Birthday': info['Birthday']}, **info['Classes']}
-    df = pd.DataFrame(flat_data).T
-    df.to_excel("Student_Info_Database.xlsx")
-    book = load_workbook("Student_Info_Database.xlsx")
-    sheet = book.active
-    # Fix the formatting of the excel file for better readability
-    for column in sheet.columns:
-        max_length = 0
-        column = [cell for cell in column]
-        for cell in column:
-            try:
-                if len(str(cell.value)) > max_length:
-                    max_length = len(cell.value)
-            except:
-                pass
-        adjusted_width = (max_length + 2)
-        sheet.column_dimensions[get_column_letter(column[0].column)].width = adjusted_width
-    # Save the workbook
-    book.save("Student_Info_Database.xlsx")
