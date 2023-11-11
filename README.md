@@ -1,5 +1,5 @@
 # School Student Information Database Version 2
-Core development completed
+Program version 2.a     Python 3.12
 
 ### About
 
